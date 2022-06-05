@@ -1,0 +1,30 @@
+.chart-manipulation {
+    flex: 20%;
+    position:sticky;
+    top:0;
+    left:0;
+    height: 100vh;
+    border: 2px solid #ddd;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.label-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  gap: 40px;
+}
+
+.btn-and-icon {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.btn-and-icon .material-icons {
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+}

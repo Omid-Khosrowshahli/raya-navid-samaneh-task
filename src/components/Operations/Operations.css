@@ -1,0 +1,17 @@
+.operations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.operations .material-icons {
+  font-size: 40px;
+  color: lightblue;
+  cursor: pointer;
+}
+
+.operations .material-icons:hover {
+  color: rgb(86, 86, 241);
+}

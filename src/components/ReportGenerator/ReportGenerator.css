@@ -1,0 +1,22 @@
+.ReportGenerator {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background-color: lightblue;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: rgb(86, 86, 241);
+}

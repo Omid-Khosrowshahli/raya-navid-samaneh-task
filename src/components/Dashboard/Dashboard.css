@@ -1,0 +1,16 @@
+.dashboard {
+  flex: 60%;
+  display: flex;
+  flex-flow: row wrap;
+  border: 2px solid #ddd;
+  margin: 20px 0;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.each-chart {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #efefef;
+  padding: 10px;
+}

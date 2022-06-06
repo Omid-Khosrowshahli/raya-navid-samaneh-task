@@ -13,7 +13,6 @@ function ReportGenerator() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [whichModal, setWhichModal] = useState({save: false, preview: false, reports: false, json: false});
   const [reportName, setReportName] = useState('');
-  const [reportsList, setReportsList] = useState([]);
 
   const handleAddData = (name, value) => {
     let newCharts = [];
@@ -44,7 +43,7 @@ function ReportGenerator() {
       />
       <div className="container">
         <Charts charts={charts} setCharts={setCharts} />
-        <Dashboard charts={charts} setId={setId} />
+        <Dashboard charts={charts} id={id} setId={setId} />
         <ChartManipulation
           charts={charts}
           setCharts={setCharts}

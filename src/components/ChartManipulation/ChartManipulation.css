@@ -28,3 +28,15 @@
   font-size: 30px;
   cursor: pointer;
 }
+
+.ulist {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}

@@ -10,7 +10,7 @@ const ChartManipulation = ({ charts, setCharts, handleAddData, id }) => {
 
     setCharts(newCharts);
   }
-
+  console.log(charts);
   return (
     <div className='chart-manipulation'>
       <h2>Data Entry</h2>
@@ -29,6 +29,21 @@ const ChartManipulation = ({ charts, setCharts, handleAddData, id }) => {
             delete
           </div>
         </div>
+      </div>
+      <div>
+        {charts.map((item) => {
+          if (item.id === id) {
+            return (
+            <ul className='ulist'>
+              <li className='list'><span>name</span><span>value</span></li>
+              {item.data.map((eachItem) => {
+                return <li className='list'><span>{eachItem.type}</span><span>{eachItem.value}</span></li>
+              }
+              )}
+            </ul>
+            )
+          }
+        })}
       </div>
     </div>
   );

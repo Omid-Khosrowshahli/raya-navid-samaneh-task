@@ -13,4 +13,15 @@
   border-radius: 5px;
   background-color: #efefef;
   padding: 10px;
+  width: 45%;
+  height: 250px;
+}
+
+.selected {
+  border: 3px solid #333;
+  border-radius: 5px;
+  background-color: #efefef;
+  padding: 10px;
+  width: 45%;
+  height: 250px;
 }

@@ -6,6 +6,7 @@ import "./ReportGenerator.css";
 import Operations from "../Operations/Operations";
 import 'antd/dist/antd.css';
 import ModalHandler from "../ModalHandler/ModalHandler";
+import { v4 as uuidv4 } from "uuid";
 
 function ReportGenerator() {
   const [charts, setCharts] = useState([]);
@@ -14,13 +15,13 @@ function ReportGenerator() {
   const [whichModal, setWhichModal] = useState({save: false, preview: false, reports: false, json: false});
   const [reportName, setReportName] = useState('');
 
-  const handleAddData = (name, value) => {
+  const handleAddData = (name, value, emptyNameField, emptyValueField) => {
     let newCharts = [];
     let newList;
 
     charts.forEach(item => {
       if (item.id === id) {
-        newList = [...item.data, {type: name, value: parseInt(value)}]
+        newList = [...item.data, {type: name, value: parseInt(value), id: uuidv4()}]
         item = {...item, data: [...newList]};
         newCharts.push(item);
       }
@@ -29,6 +30,8 @@ function ReportGenerator() {
       }
     })
     setCharts(newCharts);
+    emptyNameField("");
+    emptyValueField("");
   }
     
   const handleReportSave = (name) => {
@@ -55,7 +58,7 @@ function ReportGenerator() {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         whichModal={whichModal}
-        setWhichModal={setWhichModal}
+        setCharts={setCharts}
         handleReportSave={handleReportSave}
         reportName={reportName}
         setReportName={setReportName}

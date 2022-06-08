@@ -3,7 +3,7 @@ import PieChart from "../PieChart/PieChart";
 import BarChart from "../BarChart/BarChart";
 
 const ModalHandler = (props) => {
-  const { isModalVisible, setIsModalVisible, handleReportSave, whichModal, setWhichModal, reportName, setReportName, charts } = props;
+  const { isModalVisible, setIsModalVisible, handleReportSave, whichModal, setCharts, reportName, setReportName, charts } = props;
 
   const handleCancel = () => {
     setIsModalVisible(false);
@@ -24,6 +24,12 @@ const ModalHandler = (props) => {
       arr.push(localStorage.key(i));
     }
     return arr;
+  }
+
+  const handleLoadReport = (key) => {
+    const data = JSON.parse(localStorage.getItem(key));
+    const newCharts = [...data];
+    setCharts(newCharts);
   }
 
   return (
@@ -59,7 +65,7 @@ const ModalHandler = (props) => {
         <div>
           <ul>
           {reports().map((item) => (
-            <li>{item}</li>
+            <li style={{cursor: "pointer"}} onClick={() => handleLoadReport(item)}>{item}</li>
           ))}
           </ul>
         </div>
